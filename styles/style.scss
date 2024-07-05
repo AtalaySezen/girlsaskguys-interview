@@ -1,10 +1,167 @@
+@import "typography.scss";
 @import "variables";
+@import "icons.scss";
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    @include font-roboto;
 }
+
 body {
     background-color: $bodyBackground;
+}
+
+.main-header {
+    background-color: $mainHeader;
+    width: 100%;
+    height: 100%;
+    padding: 0 60px;
+
+    a {
+        text-decoration: none;
+        @include header-font;
+    }
+
+    .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: $white-color;
+        @include header-font;
+        height: 80px;
+
+        .header-items-div {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+
+            .flex-header-items {
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                gap: 6px;
+
+                &:first-child {
+                    gap: 10px;
+                }
+
+                &:nth-child(2),
+                &:nth-child(3) {
+                    gap: 6px;
+                }
+
+                &:last-child {
+                    gap: 10px;
+                }
+            }
+        }
+
+        .header-logo-item {
+            height: 46px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .logo-image {
+                width: 100%;
+                height: 46px;
+            }
+        }
+
+        .header-login-div {
+            display: flex;
+            align-items: center;
+            gap: 72px;
+
+            .header-login-item {
+                @include header-font;
+                display: inline-flex;
+                flex-direction: row;
+                align-items: center;
+                cursor: pointer;
+                gap: 8px;
+            }
+        }
+
+        .header-add-message-button {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            gap: 6px;
+            border: none;
+            @include button-font;
+            color: $primary-text-color;
+            background-color: $card-background;
+            padding: 12px 24px;
+            border-radius: 10px;
+            height: 48px;
+            cursor: pointer;
+        }
+    }
+}
+
+.text-primary {
+    color: $primary-text-color;
+}
+
+// Media Queries
+@media (max-width: 1150px) {
+    .main-header {
+        .header-inner {
+            @include header-medium-device-font;
+            a {
+                @include header-medium-device-font;
+            }
+
+            .flex-header-items {
+                @include header-medium-device-font;
+            }
+
+            .header-add-message-button {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .main-header {
+        padding: 0 10px;
+
+        .header-inner {
+            justify-content: space-between;
+            gap: 20px;
+            @include header-mobile-font;
+
+            a {
+                @include header-mobile-font;
+            }
+
+            .flex-header-items {
+                @include header-mobile-font;
+
+                &:nth-child(2),
+                &:nth-child(3) {
+                    display: none;
+                }
+            }
+
+            .header-logo-item {
+                .logo-image {
+                    max-width: 130px;
+                    position: relative;
+                    left: 1rem;
+                }
+            }
+
+            .header-add-message-button {
+                display: none;
+            }
+            .header-login-div .header-login-item {
+                gap: 2px;
+            }
+        }
+    }
 }
