@@ -1,60 +1,103 @@
-let popupOverlay = document.getElementById("popup-overlay");
-let popupContainer = document.getElementById("popup-container");
-let popupFirstContent = document.getElementById("popup-first-content");
-let popupSecondContent = document.getElementById("popup-second-content");
-let popupThirdContent = document.getElementById("popup-third-content");
-let popupHeader = document.getElementById("popup-header");
-let planNowButton = document.getElementById("planNowButton");
-let timeOut;
+document.addEventListener("DOMContentLoaded", () => {
+  const popupOverlay = document.getElementById("popup-overlay");
+  const popupContainer = document.getElementById("popup-container");
+  const popupFirstContent = document.getElementById("popup-first-content");
+  const popupSecondContent = document.getElementById("popup-second-content");
+  const popupThirdContent = document.getElementById("popup-third-content");
+  const popupHeader = document.getElementById("popup-header");
+  const planNowButton = document.getElementById("planNowButton");
+  const planNowLoaderButton = document.querySelector(
+    ".popup-footer #planNowButton"
+  );
+  const closeButton = document.getElementById("close-btn");
+  const exploreNowButton = document.getElementById("btn-explore");
+  const inputDateSelector = document.getElementById("trip-date");
+  const planVacationImage = document.getElementById("plan-vacation");
+  let timeOut;
 
-function checkPastDates() {
-  var today = new Date();
-  var dd = String(today.getDate()).padStart(2, "0");
-  var mm = String(today.getMonth() + 1).padStart(2, "0"); // January is 0!
-  var yyyy = today.getFullYear();
+  const checkPastDates = () => {
+    const today = new Date();
+    const dd = String(today.getDate()).padStart(2, "0");
+    const mm = String(today.getMonth() + 1).padStart(2, "0");
+    const yyyy = today.getFullYear();
+    const formattedDate = `${yyyy}-${mm}-${dd}`;
+    inputDateSelector.min = formattedDate;
+  };
 
-  today = yyyy + "-" + mm + "-" + dd;
-  document.getElementById("trip-date").min = today;
-}
+  const startPlanVacation = () => {
+    popupOverlay.style.display = "block";
+    popupContainer.style.display = "flex";
+  };
 
-//Show Black Overlay
-function startPlanVacation() {
-  popupOverlay.style.display = "block";
-  popupContainer.style.display = "flex";
-}
-
-function closePopup() {
-  popupOverlay.style.display = "none";
-  popupContainer.style.display = "none";
-  popupFirstContent.style.display = "flex";
-  popupSecondContent.style.display = "none";
-  planNowButton.style.display = "flex";
-  popupHeader.innerHTML = "Plan Your Vacation";
-  popupThirdContent.style.display = "none";
-  clearVacationTimeout();
-}
-
-function handleFormSubmit(event) {
-  event.preventDefault();
-  planVacation();
-}
-
-function planVacation() {
-  event.preventDefault();
-  popupFirstContent.style.display = "none";
-  popupSecondContent.style.display = "flex";
-
-  timeOut = setTimeout(function () {
+  const closePopup = () => {
+    popupOverlay.style.display = "none";
+    popupContainer.style.display = "none";
+    popupFirstContent.style.display = "flex";
     popupSecondContent.style.display = "none";
-    planNowButton.style.display = "none";
-    popupHeader.innerHTML = "Travel Guide";
-    popupThirdContent.style.display = "flex";
+    planNowButton.style.display = "flex";
+    planNowLoaderButton.style.display = "flex";
+    popupHeader.innerHTML = "Plan Your Vacation";
+    popupThirdContent.style.display = "none";
     clearVacationTimeout();
-  }, 2000);
-}
+  };
 
-function clearVacationTimeout() {
-  clearTimeout(timeOut);
-}
+  const validateForm = () => {
+    const inputs = document.querySelectorAll(".popup-input");
+    let isValid = true;
+    inputs.forEach((input) => {
+      const errorElement = input.nextElementSibling;
+      if (input.value.trim() === "") {
+        errorElement.textContent = `Please fill out this field.`;
+        errorElement.style.display = "block";
+        isValid = false;
+      } else {
+        errorElement.style.display = "none";
+      }
+    });
+    return isValid;
+  };
 
-checkPastDates();
+  const planVacation = () => {
+    popupFirstContent.style.display = "none";
+    popupSecondContent.style.display = "flex";
+    timeOut = setTimeout(() => {
+      popupSecondContent.style.display = "none";
+      planNowButton.style.display = "none";
+      planNowLoaderButton.style.display = "none";
+      popupHeader.innerHTML = "Travel Guide";
+      popupThirdContent.style.display = "flex";
+      clearVacationTimeout();
+    }, 2000);
+  };
+
+  const clearVacationTimeout = () => {
+    clearTimeout(timeOut);
+  };
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    if (validateForm()) {
+      planVacation();
+    }
+  };
+
+  const handleEscapeKey = (event) => {
+    if (event.key === "Escape") {
+      closePopup();
+    }
+  };
+
+  checkPastDates();
+
+  closeButton.addEventListener("click", closePopup);
+  exploreNowButton.addEventListener("click", closePopup);
+  planVacationImage.addEventListener("click", startPlanVacation);
+  popupFirstContent.addEventListener("submit", handleFormSubmit);
+  document.addEventListener("keydown", handleEscapeKey);
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closePopup();
+    }
+  });
+});

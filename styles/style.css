@@ -141,6 +141,14 @@ body {
 .main-header .header-inner .header-items-div .flex-header-items:last-child {
   gap: 10px;
 }
+.main-header .header-inner .header-items-div .flex-header-items span {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  color: #fff;
+  font-weight: 500;
+  line-height: 21px;
+}
 .main-header .header-inner .header-logo-item {
   height: 46px;
   display: flex;
@@ -380,7 +388,7 @@ body {
 
 .plan-vacation {
   position: fixed;
-  bottom: 0;
+  bottom: 1rem;
   right: 0;
   cursor: pointer;
 }
@@ -635,9 +643,16 @@ body {
   z-index: 2;
 }
 
-/*General*/
 .text-primary {
   color: #334e5e;
+}
+
+.error-message {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 0.8em;
+  color: red;
+  display: none;
 }
 
 ::-webkit-scrollbar {
@@ -734,6 +749,7 @@ body {
   .main-content .article-card .article-content-image {
     width: 100%;
     height: 100%;
+    max-width: 90%;
   }
   .popup-container .popup-body .popup-third-content {
     gap: 10px;

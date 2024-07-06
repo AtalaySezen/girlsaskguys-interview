@@ -56,9 +56,11 @@ body {
                 &:last-child {
                     gap: 10px;
                 }
+                span {
+                    @include header-font;
+                }
             }
         }
-
         .header-logo-item {
             height: 46px;
             display: flex;
@@ -280,7 +282,7 @@ body {
 
 .plan-vacation {
     position: fixed;
-    bottom: 0;
+    bottom: 1rem;
     right: 0;
     cursor: pointer;
 
@@ -477,9 +479,14 @@ body {
     z-index: 2;
 }
 
-/*General*/
 .text-primary {
     color: $primary-text-color;
+}
+
+.error-message {
+    @include error-message;
+    color: $red;
+    display: none;
 }
 
 ::-webkit-scrollbar {
@@ -561,6 +568,7 @@ body {
             .article-content-image {
                 width: 100%;
                 height: 100%;
+                max-width: 90%;
             }
         }
     }
