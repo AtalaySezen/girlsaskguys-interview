@@ -36,7 +36,7 @@
     line-height: 1.3;
 }
 
-@mixin button-font {
+@mixin button-font-add-message {
     @include font-roboto();
     font-size: 18px;
     font-weight: 700;
@@ -111,4 +111,101 @@
     font-size: 18px;
     font-weight: 500;
     line-height: 21.6px;
+}
+
+@mixin header-popup {
+    @include font-roboto();
+    font-size: 38px;
+    font-weight: 600;
+    line-height: 44.53px;
+    @media (max-width: 11500px) {
+        font-size: 28px;
+    }
+    @media (max-width: 900px) {
+        font-size: 18px;
+    }
+}
+
+@mixin question-header {
+    @include font-roboto();
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21.09px;
+    @media (max-width: 1150px) {
+        font-size: 16px;
+    }
+    @media (max-width: 900px) {
+        font-size: 14px;
+    }
+}
+
+@mixin popup-input-font {
+    @include font-roboto();
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18.75px;
+    @media (max-width: 900px) {
+        font-size: 14px;
+    }
+}
+
+@mixin button-font {
+    @include font-roboto();
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28.13px;
+    letter-spacing: -0.04em;
+    @media (max-width: 900px) {
+        font-size: 16px;
+    }
+}
+
+@mixin popup-loader-text {
+    @include font-roboto();
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.09px;
+}
+
+@mixin heading-popup-third {
+    @include font-roboto();
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 33px;
+    @media (max-width: 1150px) {
+        font-size: 18px;
+    }
+    @media (max-width: 900px) {
+        font-size: 16px;
+    }
+}
+
+@mixin text-popup-third-bold {
+    @include font-roboto();
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 27px;
+}
+
+@mixin text-popup-third-normal {
+    @include font-roboto();
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 27px;
+}
+
+@mixin text-popup-third-bottom {
+    @include font-roboto();
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+@mixin button-font-explore {
+    @include font-roboto();
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18.75px;
+    letter-spacing: -0.04em;
 }

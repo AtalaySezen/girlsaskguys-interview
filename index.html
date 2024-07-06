@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <div class="popup-overlay" id="popup-overlay"></div>
     <header class="main-header">
         <div class="header-inner">
             <div class="header-items-div">
@@ -36,7 +37,7 @@
             <div class="header-login-div">
                 <button class="header-add-message-button">
                     <div class="message-add-icon"></div>
-                    <span>Sor</span>
+                    <span class="add-message-text">Sor</span>
                 </button>
                 <div class="header-login-item">
                     <div class="profile-circle-icon"></div>
@@ -134,8 +135,99 @@
             </ul>
         </aside>
     </main>
-    
+    <div class="popup-container" id="popup-container">
+        <div class="popup-header-flex">
+            <h2 class="header-popup" id="popup-header">Plan Your Vacation</h2>
+            <div class="close-icon close-icon-position" onclick="closePopup()"></div>
+        </div>
 
+        <div class="popup-body">
+            <form class="popup-content" onsubmit="handleFormSubmit(event)" id="popup-first-content">
+                <div class="popup-content">
+                    <div class="popup-question">
+                        <h2 class="question-header">Where do you want to go on vacation?</h2>
+                        <input class="popup-input" autocomplete="off" type="text" placeholder="Write the answer">
+                    </div>
+                    <div class="popup-question">
+                        <h2 class="question-header">Which date ranges are suitable for you?</h2>
+                        <input class="popup-input" autocomplete="off" type="date" id="trip-date" name="trip-date">
+                    </div>
+                    <div class="popup-question">
+                        <h2 class="question-header">Would you also like to book a hotel?</h2>
+                        <input class="popup-input" autocomplete="off" type="text" placeholder="Write the answer">
+                    </div>
+                    <div class="popup-question">
+                        <h2 class="question-header">Do you need help with anything else about your vacation?</h2>
+                        <input class="popup-input" autocomplete="off" type="text" placeholder="Write the answer">
+                    </div>
+                </div>
+                <div class="popup-footer">
+                    <button class="popup-button" id="planNowButton">Plan Now</button>
+                </div>
+            </form>
+            
+            <div id="popup-second-content" class="popup-loader-content">
+                <!--Kızlar Soruyor Form Loader-->
+                <div class="popup-loader" id="popup-loader">
+                    <div class="loader-icon rotating"></div>
+                </div>
+                <p class="popup-loader-text">Lorem ipsum dolor sit amet consectetur. Turpis lorem congue sed viverra
+                    id
+                    amet.</p>
+                <!--Kızlar Soruyor Form Loader-->
+                <div class="popup-footer">
+                    <button class="popup-button" id="planNowButton">Plan Now</button>
+                </div>
+            </div>
+      
+            <div id="popup-third-content" class="popup-third-content">
+                <div class="popup-third-image">
+                    <img src="assets/images/home/popup-travel-guide-image.png" alt="Kızlar Soruyor İle Tatil Planı Yap"
+                        width="660" height="228" loading="lazy">
+                </div>
+                <div class="contents">
+                    <h2 class="heading-popup-third">Lorem ipsum dolor sit amet consectetur. Etiam ac ut donec amet nec
+                        sed dignissim pretium vitae.</h2>
+                </div>
+                <p class="travel-destination-text">
+                    <span class="travel-destination">1. Rome:</span> Lorem ipsum dolor sit amet consectetur. Etiam ac ut
+                    donec amet nec sed dignissim pretium
+                    vitae. Morbi nulla proin ac integer sit feugiat commodo enim.
+                </p>
+                <p class="travel-destination-text">
+                    <span class="travel-destination"> 2. Florence:</span> Lorem ipsum dolor sit amet consectetur. Etiam
+                    ac ut donec amet nec sed dignissim
+                    pretium vitae.
+                </p>
+                <p class="travel-destination-text">
+                    <span class="travel-destination">3. Venice:</span>Lorem ipsum dolor sit amet
+                    consectetur. Etiam ac ut donec amet nec sed dignissim pretium
+                    vitae. Morbi nulla proin ac integer sit feugiat commodo enim.
+                </p>
+
+                <div class="explore-now-container">
+                    <h2 class="heading-popup-third">Lorem ipsum dolor sit amet consectetur.</h2>
+                    <p class="text-popup-third-bottom">Lorem ipsum dolor sit amet consectetur.</p>
+                    <p class="text-popup-third-bottom">Bibendum commodo eget quisque lacinia morbi felis. Id massa
+                        adipiscing facilisis fusce
+                        ullamcorper id in amet aliquam.</p>
+
+                    <div class="third-content-button-flex">
+                        <button onclick="closePopup()" class="button-explore-now">Explorer Now</button>
+                        <img src="assets/images/home/turkish-airlines-logo.png" width="148" height="40"
+                            alt="Türk Hava Yolları Kızlar Soruyor">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+    <div class="plan-vacation" onclick="startPlanVacation()">
+        <img class="vacation-image" src="assets/images/home/plan-vacation.svg" width="120" height="120"
+            alt="Kızlar Soruyor İle Tatilini Planla">
+    </div>
     <script src="js/main.js"></script>
 </body>
 
