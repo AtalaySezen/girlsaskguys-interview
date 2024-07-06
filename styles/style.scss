@@ -25,6 +25,10 @@ body {
         @include header-font;
     }
 
+    .navbar-header-mobile,
+    .mobile-menu {
+        display: none;
+    }
     .header-inner {
         display: flex;
         align-items: center;
@@ -276,6 +280,10 @@ body {
             @include paragraph-lg-semibold;
             text-decoration: none;
             color: $grey-article;
+            &:hover {
+                text-decoration: underline;
+                transition: 0.5s;
+            }
         }
     }
 }
@@ -620,6 +628,48 @@ body {
     .main-header {
         padding: 0 10px;
 
+        .mobile-active {
+            display: flex;
+        }
+        .navbar-header-mobile {
+            flex-direction: column;
+            align-items: flex-start;
+            z-index: 50;
+            position: fixed;
+            width: 72%;
+            height: 100%;
+            background-color: $card-background;
+            left: 0;
+            top: 0;
+            .mobile-header-item {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                @include mobile-navbar-font;
+                color: $black;
+            }
+            .mobile-add-message-button {
+                display: flex;
+                align-items: center;
+                @include mobile-navbar-font;
+                color: $black;
+                text-align: center;
+                background: transparent;
+                border: none;
+                outline: none;
+                gap: 1rem;
+            }
+            .mobile-navbar-contents {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                position: relative;
+                top: 3rem;
+                gap: 1rem;
+                left: 1rem;
+            }
+        }
+
         .header-inner {
             justify-content: space-between;
             gap: 20px;
@@ -628,19 +678,19 @@ body {
             a {
                 @include header-mobile-font;
             }
-
-            .flex-header-items {
-                @include header-mobile-font;
-
-                &:nth-child(2),
-                &:nth-child(3) {
-                    display: none;
-                }
+            .header-items-div {
+                display: none;
+            }
+            .mobile-menu {
+                display: flex;
+                flex: 0.7;
             }
 
             .header-logo-item {
+                flex: 1;
+                justify-content: flex-start;
                 .logo-image {
-                    max-width: 130px;
+                    max-width: 105px;
                     position: relative;
                     left: 1rem;
                 }
@@ -661,12 +711,18 @@ body {
     .popup-container {
         padding: 5px;
         max-width: 95%;
+        max-height: 90%;
+
         .popup-header-flex {
             margin-bottom: 5px;
         }
 
         .popup-third-image img {
             height: 150px;
+        }
+        .close-icon-position {
+            left: 0;
+            top: 0;
         }
 
         .popup-body {
