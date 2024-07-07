@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const validateForm = () => {
-    const inputs = document.querySelectorAll(".popup-input");
+    const inputs = document.querySelectorAll(".popup-input, #trip-date");
     let isValid = true;
     inputs.forEach((input) => {
       if (!validateInput(input)) {
@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  const inputs = document.querySelectorAll(".popup-input");
+  const inputs = document.querySelectorAll(".popup-input,#trip-date");
   inputs.forEach((input) => {
     input.addEventListener("input", () => validateInput(input));
     input.addEventListener("change", () => validateInput(input));
