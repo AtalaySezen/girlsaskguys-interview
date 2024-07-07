@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const popupHeader = document.getElementById("popup-header");
   const planNowButton = document.getElementById("planNowButton");
   const planNowLoaderButton = document.querySelector(
-    ".popup-footer #planNowButton"
+    ".popup-footer #planNowButtonLoader"
   );
   const closeButton = document.getElementById("close-btn");
   const exploreNowButton = document.getElementById("btn-explore");

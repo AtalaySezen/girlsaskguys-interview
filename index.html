@@ -28,7 +28,7 @@
                     Ara
                 </a>
             </div>
-            <div class="mobile-menu" id="mobile-menu-icon">
+            <div class="mobile-menu" id="mobile-menu-icon-container">
                 <div class="flex-header-items">
                     <div class="hamburger-menu-icon-mobile" id="mobile-menu-icon"></div>
                 </div>
@@ -41,7 +41,7 @@
             </div>
             <div class="header-items-right">
                 <button class="header-add-message-button">
-                    <div class="message-add-icon"></div>
+                    <i class="message-add-icon"></i>
                     <span class="add-message-text">Sor</span>
                 </button>
                 <div class="header-right-items">
@@ -61,7 +61,7 @@
                     Ara
                 </a>
                 <button class="mobile-add-message-button">
-                    <div class="message-add-icon-mobile"></div>
+                    <i class="message-add-icon-mobile"></i>
                     Sor
                 </button>
             </div>
@@ -165,7 +165,7 @@
             <form class="popup-content" id="popup-first-content">
                 <div class="popup-content">
                     <div class="popup-question">
-                        <h2 class="question-header">Where do you want to go on vacation?</h2>
+                        <label class="question-header">Where do you want to go on vacation?</label>
                         <div>
                             <input class="popup-input" autocomplete="off" type="text" id="vacation-destination"
                                 placeholder="Write the answer">
@@ -173,14 +173,14 @@
                         </div>
                     </div>
                     <div class="popup-question">
-                        <h2 class="question-header">Which date ranges are suitable for you?</h2>
+                        <label class="question-header">Which date ranges are suitable for you?</label>
                         <div>
                             <input class="popup-input" autocomplete="off" type="date" id="trip-date" name="trip-date">
                             <span class="error-message" id="date-error"></span>
                         </div>
                     </div>
                     <div class="popup-question">
-                        <h2 class="question-header">Would you also like to book a hotel?</h2>
+                        <label class="question-header">Would you also like to book a hotel?</label>
                         <div>
                             <input class="popup-input" autocomplete="off" type="text" id="hotel-booking"
                                 placeholder="Write the answer">
@@ -188,7 +188,7 @@
                         </div>
                     </div>
                     <div class="popup-question">
-                        <h2 class="question-header">Do you need help with anything else about your vacation?</h2>
+                        <label class="question-header">Do you need help with anything else about your vacation?</label>
                         <div>
                             <input class="popup-input" autocomplete="off" type="text" id="additional-help"
                                 placeholder="Write the answer">
@@ -210,7 +210,7 @@
                     amet.</p>
                 <!--Kızlar Soruyor Form Loader-->
                 <div class="popup-footer">
-                    <button class="popup-button" id="planNowButton" disabled>Plan Now</button>
+                    <button class="popup-button" id="planNowButtonLoader" disabled>Plan Now</button>
                 </div>
             </div>
             <div id="popup-third-content" class="popup-third-content">
