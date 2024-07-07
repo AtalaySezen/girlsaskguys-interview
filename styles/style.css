@@ -35,8 +35,8 @@
 .search-icon {
   background-repeat: no-repeat;
   background-size: cover;
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   background-image: url('data:image/svg+xml,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M26.2129 23.7949C26.582 24.2051 26.582 24.8203 26.1719 25.1895L25.0234 26.3379C24.6543 26.748 24.0391 26.748 23.6289 26.3379L19.5684 22.2773C19.3633 22.0723 19.2812 21.8262 19.2812 21.5801V20.8828C17.8047 22.0312 16 22.6875 14.0312 22.6875C9.31445 22.6875 5.5 18.873 5.5 14.1562C5.5 9.48047 9.31445 5.625 14.0312 5.625C18.707 5.625 22.5625 9.48047 22.5625 14.1562C22.5625 16.166 21.8652 17.9707 20.7578 19.4062H21.4141C21.6602 19.4062 21.9062 19.5293 22.1113 19.6934L26.2129 23.7949ZM14.0312 19.4062C16.9023 19.4062 19.2812 17.0684 19.2812 14.1562C19.2812 11.2852 16.9023 8.90625 14.0312 8.90625C11.1191 8.90625 8.78125 11.2852 8.78125 14.1562C8.78125 17.0684 11.1191 19.4062 14.0312 19.4062Z" fill="white"/></svg>');
 }
 
@@ -121,6 +121,7 @@
 
 body {
   background-color: #f3f3f3;
+  scroll-behavior: smooth;
   width: 100%;
   height: 100%;
 }
@@ -154,51 +155,38 @@ body {
   align-items: center;
   justify-content: space-between;
   color: #fff;
-  font-family: "Roboto", sans-serif;
-  font-size: 18px;
-  font-style: normal;
-  color: #fff;
-  font-weight: 500;
-  line-height: 21px;
   height: 70px;
 }
-@media (max-width: 900px) {
-  .main-header .header-inner {
-    font-size: 13px;
-  }
+.main-header .header-inner .header-items-left {
+  display: flex;
+  gap: 30px;
 }
-.main-header .header-inner .header-items-div {
+.main-header .header-inner .header-items-left .header-items {
   display: flex;
   align-items: center;
-  gap: 50px;
 }
-.main-header .header-inner .header-items-div .flex-header-items {
+.main-header .header-inner .header-items-left .header-items:first-child {
+  gap: 10px;
+}
+.main-header .header-inner .header-items-left .header-items:nth-child(2), .main-header .header-inner .header-items-left .header-items:nth-child(3) {
+  gap: 6px;
+}
+.main-header .header-inner .header-items-left .header-items:last-child {
+  gap: 10px;
+}
+.main-header .header-inner .header-items-logo {
+  display: flex;
+  justify-content: center;
+}
+.main-header .header-inner .header-items-right {
   display: flex;
   align-items: center;
-  cursor: pointer;
-  gap: 6px;
+  gap: 72px;
 }
-.main-header .header-inner .header-items-div .flex-header-items:first-child {
-  gap: 10px;
-}
-.main-header .header-inner .header-items-div .flex-header-items:nth-child(2), .main-header .header-inner .header-items-div .flex-header-items:nth-child(3) {
-  gap: 6px;
-}
-.main-header .header-inner .header-items-div .flex-header-items:last-child {
-  gap: 10px;
-}
-.main-header .header-inner .header-items-div .flex-header-items span {
-  font-family: "Roboto", sans-serif;
-  font-size: 18px;
-  font-style: normal;
-  color: #fff;
-  font-weight: 500;
-  line-height: 21px;
-}
-@media (max-width: 900px) {
-  .main-header .header-inner .header-items-div .flex-header-items span {
-    font-size: 13px;
-  }
+.main-header .header-inner .header-items-right .header-right-items {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 .main-header .header-inner .header-logo-item {
   height: 46px;
@@ -209,29 +197,6 @@ body {
 .main-header .header-inner .header-logo-item .logo-image {
   width: 100%;
   height: 46px;
-}
-.main-header .header-inner .header-login-div {
-  display: flex;
-  align-items: center;
-  gap: 72px;
-}
-.main-header .header-inner .header-login-div .header-login-item {
-  font-family: "Roboto", sans-serif;
-  font-size: 18px;
-  font-style: normal;
-  color: #fff;
-  font-weight: 500;
-  line-height: 21px;
-  display: inline-flex;
-  flex-direction: row;
-  align-items: center;
-  cursor: pointer;
-  gap: 8px;
-}
-@media (max-width: 900px) {
-  .main-header .header-inner .header-login-div .header-login-item {
-    font-size: 13px;
-  }
 }
 .main-header .header-inner .header-add-message-button {
   display: flex;
@@ -790,17 +755,6 @@ body {
     line-height: 1.3;
     line-height: 21px;
   }
-  .main-header .header-inner .flex-header-items {
-    font-family: "Roboto", sans-serif;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 1.3;
-    line-height: 21px;
-  }
-  .main-header .header-inner .header-add-message-button {
-    display: none;
-  }
   .main-content {
     flex-wrap: wrap;
     align-items: center;
@@ -857,7 +811,7 @@ body {
     max-width: 346px;
   }
 }
-@media (max-width: 900px) {
+@media (max-width: 950px) {
   .main-header {
     padding: 0 10px;
   }
@@ -869,7 +823,7 @@ body {
     align-items: flex-start;
     z-index: 50;
     position: fixed;
-    width: 72%;
+    width: 60%;
     height: 100%;
     background-color: #ffffff;
     left: 0;
@@ -930,12 +884,15 @@ body {
     font-weight: 700;
     line-height: 1.3;
   }
-  .main-header .header-inner .header-items-div {
+  .main-header .header-inner .header-items-left,
+  .main-header .header-inner .header-items-right {
     display: none;
+  }
+  .main-header .header-inner .header-items-logo {
+    width: 100%;
   }
   .main-header .header-inner .mobile-menu {
     display: flex;
-    flex: 0.7;
   }
   .main-header .header-inner .header-logo-item {
     flex: 1;
@@ -948,9 +905,6 @@ body {
   }
   .main-header .header-inner .header-add-message-button {
     display: none;
-  }
-  .main-header .header-inner .header-login-div .header-login-item {
-    gap: 2px;
   }
   .subheader {
     justify-content: flex-start;

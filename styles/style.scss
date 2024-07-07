@@ -10,6 +10,7 @@
 
 body {
     background-color: $bodyBackground;
+    scroll-behavior: smooth;
     width: 100%;
     height: 100%;
 }
@@ -34,24 +35,17 @@ body {
         align-items: center;
         justify-content: space-between;
         color: $white-color;
-        @include header-font;
         height: 70px;
-
-        .header-items-div {
+        .header-items-left {
             display: flex;
-            align-items: center;
-            gap: 50px;
+            gap: 30px;
 
-            .flex-header-items {
+            .header-items {
                 display: flex;
                 align-items: center;
-                cursor: pointer;
-                gap: 6px;
-
                 &:first-child {
                     gap: 10px;
                 }
-
                 &:nth-child(2),
                 &:nth-child(3) {
                     gap: 6px;
@@ -60,11 +54,24 @@ body {
                 &:last-child {
                     gap: 10px;
                 }
-                span {
-                    @include header-font;
-                }
             }
         }
+
+        .header-items-logo {
+            display: flex;
+            justify-content: center;
+        }
+        .header-items-right {
+            display: flex;
+            align-items: center;
+            gap: 72px;
+            .header-right-items {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+        }
+
         .header-logo-item {
             height: 46px;
             display: flex;
@@ -74,21 +81,6 @@ body {
             .logo-image {
                 width: 100%;
                 height: 46px;
-            }
-        }
-
-        .header-login-div {
-            display: flex;
-            align-items: center;
-            gap: 72px;
-
-            .header-login-item {
-                @include header-font;
-                display: inline-flex;
-                flex-direction: row;
-                align-items: center;
-                cursor: pointer;
-                gap: 8px;
             }
         }
 
@@ -554,14 +546,6 @@ body {
             a {
                 @include header-medium-device-font;
             }
-
-            .flex-header-items {
-                @include header-medium-device-font;
-            }
-
-            .header-add-message-button {
-                display: none;
-            }
         }
     }
     .main-content {
@@ -624,7 +608,7 @@ body {
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 950px) {
     .main-header {
         padding: 0 10px;
 
@@ -636,7 +620,7 @@ body {
             align-items: flex-start;
             z-index: 50;
             position: fixed;
-            width: 72%;
+            width: 60%;
             height: 100%;
             background-color: $card-background;
             left: 0;
@@ -678,12 +662,15 @@ body {
             a {
                 @include header-mobile-font;
             }
-            .header-items-div {
+            .header-items-left,
+            .header-items-right {
                 display: none;
+            }
+            .header-items-logo {
+                width: 100%;
             }
             .mobile-menu {
                 display: flex;
-                flex: 0.7;
             }
 
             .header-logo-item {
@@ -698,9 +685,6 @@ body {
 
             .header-add-message-button {
                 display: none;
-            }
-            .header-login-div .header-login-item {
-                gap: 2px;
             }
         }
     }
