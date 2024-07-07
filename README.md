@@ -1,6 +1,6 @@
 # GirlsAskGuys Interview
 
-This project is a part of a frontend developer interview provided by **GirlsAskGuys**. 
+This project is a frontend developer interview provided by **GirlsAskGuys**. 
 
 # About the Project
 This project is built using HTML, SCSS, and JavaScript. The styling is handled using Sass with various mixins for typography and icons.
