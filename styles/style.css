@@ -158,6 +158,12 @@ body {
 .main-header .mobile-menu {
   display: none;
 }
+.main-header .mobile-close-position {
+  display: block;
+  position: relative;
+  left: 13rem;
+  top: 1rem;
+}
 .main-header .header-inner {
   display: flex;
   align-items: center;

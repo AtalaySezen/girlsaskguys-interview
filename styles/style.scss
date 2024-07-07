@@ -30,6 +30,14 @@ body {
     .mobile-menu {
         display: none;
     }
+
+    .mobile-close-position {
+        display: block;
+        position: relative;
+        left: 13rem;
+        top: 1rem;
+    }
+
     .header-inner {
         display: flex;
         align-items: center;

@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const mobileMenuIcon = document.getElementById("mobile-menu-icon");
   const mobileSideBar = document.getElementById("mobile-menu");
   const mobileHeaderItems = document.querySelectorAll(".mobile-header-item");
+  const mobileCloseIcon = document.getElementById("mobile-close-icon");
   const bodyOverlay = document.getElementById("popup-overlay");
 
   const openSidenav = () => {
@@ -26,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   mobileMenuButton.addEventListener("click", openSidenav);
+  mobileCloseIcon.addEventListener("click", closeSidenav);
 
   document.body.addEventListener("click", (event) => {
     const target = event.target;
