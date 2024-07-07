@@ -30,8 +30,14 @@ document.addEventListener("DOMContentLoaded", () => {
     popupContainer.style.display = "flex";
   };
 
+  console.log(popupFirstContent);
   const resetPopup = () => {
     popupFirstContent.reset();
+
+    const errorElements = document.querySelectorAll(".error-message");
+    errorElements.forEach((errorElement) => {
+      errorElement.style.display = "none";
+    });
 
     bodyOverlay.style.display = "none";
     popupContainer.style.display = "none";
@@ -39,6 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
     popupSecondContent.style.display = "none";
     planNowButton.style.display = "flex";
     planNowLoaderButton.style.display = "flex";
+    labelElement.textContent = "Select date range";
     popupHeader.innerHTML = "Plan Your Vacation";
     popupThirdContent.style.display = "none";
   };
