@@ -27,11 +27,6 @@ The `typography.scss` file contains mixins for different text styles.
 
 Example:
 ```scss
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
-
-@mixin font-roboto {
-    font-family: "Roboto", sans-serif;
-}
 
 @mixin header-font {
     @include font-roboto();
