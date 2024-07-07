@@ -29,7 +29,9 @@ document.addEventListener("DOMContentLoaded", () => {
     popupContainer.style.display = "flex";
   };
 
-  const closePopup = () => {
+  const resetPopup = () => {
+    popupFirstContent.reset();
+
     bodyOverlay.style.display = "none";
     popupContainer.style.display = "none";
     popupFirstContent.style.display = "flex";
@@ -38,6 +40,10 @@ document.addEventListener("DOMContentLoaded", () => {
     planNowLoaderButton.style.display = "flex";
     popupHeader.innerHTML = "Plan Your Vacation";
     popupThirdContent.style.display = "none";
+  };
+
+  const closePopup = () => {
+    resetPopup();
     clearVacationTimeout();
   };
 
@@ -74,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
       popupHeader.innerHTML = "Travel Guide";
       popupThirdContent.style.display = "flex";
       clearVacationTimeout();
-    }, 2000);
+    }, 5000);
   };
 
   const clearVacationTimeout = () => {

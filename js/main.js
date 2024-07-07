@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const mobileMenuButton = document.getElementById("mobile-menu-icon-container");
+  const mobileMenuButton = document.getElementById(
+    "mobile-menu-icon-container"
+  );
   const mobileMenuIcon = document.getElementById("mobile-menu-icon");
   const mobileSideBar = document.getElementById("mobile-menu");
   const mobileHeaderItems = document.querySelectorAll(".mobile-header-item");
