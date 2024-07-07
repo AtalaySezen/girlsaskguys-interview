@@ -5,7 +5,7 @@ This project is a frontend developer interview provided by **GirlsAskGuys**.
 # About the Project
 This project is built using HTML, SCSS, and JavaScript. The styling is handled using Sass with various mixins for typography and icons.
 
-This project is designed to offer a seamless user experience with a focus on aesthetics and functionality. I utilize SCSS for styling to maintain modular and reusable CSS, making the development process efficient and the codebase easy to maintain.
+This project is designed to offer a seamless user experience with a focus on aesthetics and functionality. I have utilized SCSS for styling to maintain modular and reusable CSS, making the development process efficient and the codebase easy to make easy to maintain.
 
 **Usage**
 <br />
@@ -13,10 +13,14 @@ To customize the project, modify the SCSS files located in the src/styles direct
 
 **Features**
 <br />
-Responsive Design: Adapts to various screen sizes for optimal viewing on any device.
-Modular SCSS: Organized SCSS files for easy maintenance and scalability.
-Icon Support: Built-in mixins for various icon sizes.
-Typography Mixins: Predefined typography styles to ensure design consistency.
+**Responsive Design:** Adapts to various screen sizes for optimal viewing on any device.
+<br />
+**Modular SCSS:** Organized SCSS files for easy maintenance and scalability.
+<br />
+**Icon Support:** Built-in mixins for various icon sizes.
+<br />
+**Typography Mixins:** Predefined typography styles to ensure design consistency.
+<br />
 
 **SCSS Structure**
 <br />
