@@ -35,8 +35,8 @@
 .search-icon {
   background-repeat: no-repeat;
   background-size: cover;
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
   background-image: url('data:image/svg+xml,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M26.2129 23.7949C26.582 24.2051 26.582 24.8203 26.1719 25.1895L25.0234 26.3379C24.6543 26.748 24.0391 26.748 23.6289 26.3379L19.5684 22.2773C19.3633 22.0723 19.2812 21.8262 19.2812 21.5801V20.8828C17.8047 22.0312 16 22.6875 14.0312 22.6875C9.31445 22.6875 5.5 18.873 5.5 14.1562C5.5 9.48047 9.31445 5.625 14.0312 5.625C18.707 5.625 22.5625 9.48047 22.5625 14.1562C22.5625 16.166 21.8652 17.9707 20.7578 19.4062H21.4141C21.6602 19.4062 21.9062 19.5293 22.1113 19.6934L26.2129 23.7949ZM14.0312 19.4062C16.9023 19.4062 19.2812 17.0684 19.2812 14.1562C19.2812 11.2852 16.9023 8.90625 14.0312 8.90625C11.1191 8.90625 8.78125 11.2852 8.78125 14.1562C8.78125 17.0684 11.1191 19.4062 14.0312 19.4062Z" fill="white"/></svg>');
 }
 
@@ -429,43 +429,43 @@ body {
   position: fixed;
   width: 100%;
   max-width: 742px;
+  max-height: 95%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #ffffff;
-  padding: 30px;
+  padding: 50px 40px 50px 40px;
   z-index: 5;
   border-radius: 20px;
   margin: 6px 0;
 }
-.popup-container .header-popup {
+.popup-container .popup-header-flex {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.popup-container .popup-header-flex .header-popup {
   font-family: "Roboto", sans-serif;
   font-size: 38px;
   font-weight: 600;
   line-height: 44.53px;
-  width: 325px;
+  flex: 1;
   text-align: center;
 }
 @media (max-width: 11500px) {
-  .popup-container .header-popup {
+  .popup-container .popup-header-flex .header-popup {
     font-size: 28px;
   }
 }
 @media (max-width: 900px) {
-  .popup-container .header-popup {
-    font-size: 18px;
+  .popup-container .popup-header-flex .header-popup {
+    font-size: 22px;
   }
-}
-.popup-container .popup-header-flex {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
 }
 .popup-container .close-icon-position {
   cursor: pointer;
   position: relative;
-  left: 10rem;
-  top: 2px;
 }
 .popup-container .popup-footer {
   display: flex;
@@ -910,8 +910,6 @@ body {
     justify-content: flex-start;
   }
   .popup-container {
-    padding: 5px;
-    max-width: 95%;
     max-height: 90%;
   }
   .popup-container .popup-header-flex {
@@ -919,10 +917,6 @@ body {
   }
   .popup-container .popup-third-image img {
     height: 150px;
-  }
-  .popup-container .close-icon-position {
-    left: 0;
-    top: 0;
   }
   .popup-container .popup-body .popup-content {
     align-items: center;

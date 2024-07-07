@@ -299,31 +299,30 @@ body {
     position: fixed;
     width: 100%;
     max-width: 742px;
+    max-height: 95%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: $card-background;
-    padding: 30px;
+    padding: 50px 40px 50px 40px;
     z-index: 5;
     border-radius: 20px;
     margin: 6px 0;
 
-    .header-popup {
-        @include header-popup;
-        width: 325px;
-        text-align: center;
-    }
-
     .popup-header-flex {
         display: flex;
+        width: 100%;
         align-items: center;
         margin-bottom: 20px;
+        .header-popup {
+            @include header-popup;
+            flex: 1;
+            text-align: center;
+        }
     }
     .close-icon-position {
         cursor: pointer;
         position: relative;
-        left: 10rem;
-        top: 2px;
     }
 
     .popup-footer {
@@ -693,8 +692,6 @@ body {
         justify-content: flex-start;
     }
     .popup-container {
-        padding: 5px;
-        max-width: 95%;
         max-height: 90%;
 
         .popup-header-flex {
@@ -703,10 +700,6 @@ body {
 
         .popup-third-image img {
             height: 150px;
-        }
-        .close-icon-position {
-            left: 0;
-            top: 0;
         }
 
         .popup-body {
