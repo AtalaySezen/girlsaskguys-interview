@@ -41,17 +41,24 @@ document.addEventListener("DOMContentLoaded", () => {
     clearVacationTimeout();
   };
 
+  const validateInput = (input) => {
+    const errorElement = input.nextElementSibling;
+    if (input.value.trim() === "") {
+      errorElement.textContent = `Please fill out this field.`;
+      errorElement.style.display = "block";
+      return false;
+    } else {
+      errorElement.style.display = "none";
+      return true;
+    }
+  };
+
   const validateForm = () => {
     const inputs = document.querySelectorAll(".popup-input");
     let isValid = true;
     inputs.forEach((input) => {
-      const errorElement = input.nextElementSibling;
-      if (input.value.trim() === "") {
-        errorElement.textContent = `Please fill out this field.`;
-        errorElement.style.display = "block";
+      if (!validateInput(input)) {
         isValid = false;
-      } else {
-        errorElement.style.display = "none";
       }
     });
     return isValid;
@@ -99,5 +106,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (event.key === "Escape") {
       closePopup();
     }
+  });
+
+  const inputs = document.querySelectorAll(".popup-input");
+  inputs.forEach((input) => {
+    input.addEventListener("input", () => validateInput(input));
+    input.addEventListener("change", () => validateInput(input));
   });
 });
