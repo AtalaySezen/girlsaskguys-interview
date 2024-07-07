@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeButton = document.getElementById("close-btn");
   const exploreNowButton = document.getElementById("btn-explore");
   const inputDateSelector = document.getElementById("trip-date");
+  const labelElement = document.querySelector(".popup-label-date");
   const planVacationImage = document.getElementById("plan-vacation");
   let timeOut;
 
@@ -100,12 +101,23 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  function updateLabel() {
+    if (inputDateSelector.value) {
+      labelElement.textContent = inputDateSelector.value;
+    } else {
+      labelElement.textContent = "Select date range";
+    }
+  }
+
   checkPastDates();
 
   closeButton.addEventListener("click", closePopup);
   exploreNowButton.addEventListener("click", closePopup);
   planVacationImage.addEventListener("click", startPlanVacation);
   popupFirstContent.addEventListener("submit", handleFormSubmit);
+  inputDateSelector.addEventListener("change", () => {
+    updateLabel();
+  });
   document.addEventListener("keydown", handleEscapeKey);
 
   document.addEventListener("keydown", (event) => {

@@ -159,10 +159,13 @@ body {
   display: none;
 }
 .main-header .mobile-close-position {
-  display: block;
-  position: relative;
-  left: 13rem;
-  top: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  justify-content: flex-end;
+  padding: 10px;
 }
 .main-header .header-inner {
   display: flex;
@@ -236,6 +239,17 @@ body {
   display: none;
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+input#trip-date::-webkit-calendar-picker-indicator {
+  width: 100%;
+  margin: 0;
+  border: 1px solid red;
+  background: none;
+  position: absolute;
+  right: 1rem;
+  opacity: 0;
+  width: 100%;
 }
 
 .subheader {
@@ -646,6 +660,46 @@ body {
   border-radius: 10px;
   gap: 15px;
 }
+.popup-container .popup-question .date-picker-container {
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+}
+.popup-container .popup-question #trip-date {
+  background: transparent;
+  bottom: 0;
+  color: transparent;
+  cursor: pointer;
+  height: auto;
+  left: 0;
+  height: 50px;
+  position: absolute;
+  right: 0;
+  top: -14px;
+  width: auto;
+  opacity: 0;
+  z-index: 50;
+  border: none;
+  outline: none;
+}
+.popup-container .popup-question .popup-label-date {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18.75px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 19px;
+  color: rgba(0, 0, 0, 0.6);
+}
+@media (max-width: 950px) {
+  .popup-container .popup-question .popup-label-date {
+    font-size: 14px;
+  }
+}
 .popup-container .popup-question .question-header {
   font-family: "Roboto", sans-serif;
   font-size: 18px;
@@ -672,7 +726,7 @@ body {
   outline: none;
   width: 100%;
   height: 19px;
-  opacity: 0.5px;
+  color: rgba(0, 0, 0, 0.6);
   cursor: pointer;
 }
 @media (max-width: 950px) {
@@ -903,7 +957,7 @@ body {
     flex-direction: column;
     height: 100%;
     position: relative;
-    top: 3rem;
+    top: 1rem;
     gap: 1rem;
     left: 1rem;
   }
