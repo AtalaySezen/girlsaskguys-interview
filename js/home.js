@@ -30,7 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
     popupContainer.style.display = "flex";
   };
 
-  console.log(popupFirstContent);
   const resetPopup = () => {
     popupFirstContent.reset();
 
